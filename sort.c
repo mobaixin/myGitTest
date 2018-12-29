@@ -72,14 +72,18 @@ void test(int *array, unsigned nelem) {
 }
 
 int main() {
-  int input[4] = { 4, 3, 2, 1};
-  int array[100000000] = new int[100000000];
-  int *a;
-  int b = a;
-  c = 1;
-  int a = "char";
+  int input[4] = { 4, 3, 2, 0};
+  int i = 0;
   klee_make_symbolic(&input, sizeof(input), "input");
   test(input, 4);
-  insert_ordered(input, 6);
+  insert_ordered(input, 6, 3);
+  for(i = 0; i < 4; i++){
+    printf("%d", 12/input[i]);
+  }
+  int b[1000000];
+  int *c;
+  char* d = "salfhal";
+  insert_ordered(d, 5, 2);
+  printf("%p", c);
   return 0;
 }
